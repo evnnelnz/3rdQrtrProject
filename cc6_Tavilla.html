@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 6
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: lightseagreen;
+            }
+            h4 {
+                color: aliceblue;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <h1> Quadratic Formula </h1>
+
+        <button onclick="solve()">Find the root</button> <br><br>
+        <button onclick="formula()">Show the formula</button> <br><br>
+
+        <h4 id="display"></h4>
+        <br>
+        <h4 id="result"></h4>
+
+        <script>
+            var a = prompt("Enter the value of a");
+            var b = prompt("Enter the value of b");
+            var c = prompt("Enter the value of c");
+
+            function solve(){
+                var steps = b*b - 4*a*c
+                
+                if (steps > 0) {
+                    r1 = ((-b - Math.sqrt(steps)) / (2*a)).toFixed(4);
+                    r2 = ((-b + Math.sqrt(steps)) / (2*a)).toFixed(4);
+
+                    document.getElementById("result").innerHTML = " The roots are " + r1 + " and " + r2;
+                }
+
+                else if (steps==0){
+                    r1 = r2 = (-b / (2*a)).toFixed(4);
+
+                    document.getElementById("result").innerHTML = " The root/s of this equation is/are " + r1;
+                }
+
+                else {
+                    document.getElementById("result").innerHTML = "The x1 amd x2 of this equation are imaginary numbers.";
+
+                }
+            }
+
+                function formula() {
+                    document.getElementById("display").innerHTML = "(" + a + ")x<sup>2</sup>" + "+" +"(" + b + ")x" + " + " + "(" + c + ")";
+                }
+               
+            
+        </script>
+    </body>
+</html>
