@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Coding Challenge 5
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background-color: paleturquoise;
+                font-family: 'Times New Roman', Times, serif;
+                color: blueviolet;
+            }
+           
+            button {
+                color: purple;
+            }
+
+            h4 {
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Modified FLAMES </h1>
+
+        <button onclick="flames()">Match Names</button>
+        <h3 id="name"></h3>
+
+        <h4>FLAMES Result:</h4>
+        <h3 id="result"></h3>
+
+
+        <script>
+            function flames(){
+               var nameA = prompt("Enter a person's name:");
+               var nameB = prompt("Enter another person's name:");
+               var totalName = nameA.split(" ").join(" ")+ nameB.split(" ").join(" ");
+               var count = totalName.length;
+               var flames = count % 6;
+
+               switch(flames) {
+                case 1:
+                    document.getElementById("result").innerHTML="Friends";
+                    break;
+                case 2:
+                    document.getElementById("result").innerHTML="Lovers";
+                    break;
+                case 3:
+                    document.getElementById("result").innerHTML="Acquaintances";
+                    break;
+                case 4:
+                    document.getElementById("result").innerHTML="Marriage";
+                    break;
+                case 5:
+                    document.getElementById("result").innerHTML="Enemies";
+                    break;
+                case 6:
+                    document.getElementById("result").innerHTML="Sweethearts";
+                    break;
+               }
+
+               document.getElementById("name").innerHTML = nameA + " and " + nameB;
+                
+            }
+        </script>
+    </body>
+</html>
